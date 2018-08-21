@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.m \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMExampleDrawerVisualStateManager.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerVisualState.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCManagerModule.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/UIViewController+Rotation.h

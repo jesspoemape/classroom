@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCViewController.m \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCNavigationController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCTabBarController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/TheSidebarController.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/Animations/SidebarAnimation.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCExternalViewControllerProtocol.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.h \
+  /Users/jpoemape/Desktop/jess/classroom/node_modules/react-native-navigation/ios/RCCCustomTitleView.h \
+  /Users/jpoemape/Desktop/jess/classroom/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootViewDelegate.h

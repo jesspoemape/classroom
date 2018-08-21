@@ -10,7 +10,9 @@ class StartScreen extends Component {
     }
 
     teacherHandler() {
-        alert('You are a Teacher');
+        this.props.navigator.push({
+            screen: 'classroom.PickClassroomAndStudentScreen',
+        });
     }
 
     adminHandler() {

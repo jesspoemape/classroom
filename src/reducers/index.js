@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
-import testReducer from './testReducer';
+import studentReducer from './studentReducer';
+import classroomReducer from './classroomReducer';
+import deckReducer from './deckReducer';
 
 export default combineReducers({
-    test: testReducer,
-})
-;
+    classrooms: classroomReducer,
+    students: studentReducer,
+    decks: deckReducer,
+});
