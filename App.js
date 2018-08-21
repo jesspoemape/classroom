@@ -19,6 +19,8 @@ Navigation.registerComponent(
 Navigation.registerComponent(
   'classroom.OptionListScreen',
   () => OptionListScreen,
+  store,
+  Provider
 );
 
 //  Start App

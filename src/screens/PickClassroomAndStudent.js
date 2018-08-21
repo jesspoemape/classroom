@@ -26,6 +26,7 @@ class PickClassroomAndStudentScreen extends Component {
         this.setState({
             [picker]: value
         });
+        this.props.navigator.pop();
     }
 
     startSession() {
@@ -34,18 +35,18 @@ class PickClassroomAndStudentScreen extends Component {
 
     openOptionListScreen(listType) {
         const { classroom } = this.state;
-         if (listType === 'student') {
+        const singularListType = listType.slice(0, listType.length -1)
+        if (singularListType === 'student') {
             this.props.fetchStudents(classroom.id);
-        } else if (listType === 'deck') {
+        } else if (singularListType === 'deck') {
             this.props.fetchDecks(classroom.id);
         }
         this.props.navigator.push({
             screen: 'classroom.OptionListScreen',
-            title: `Pick a ${listType}`,
+            title: `Pick a ${singularListType}`,
             passProps: {
                 onPickItem: this.updatePicker,
-                itemsList: this.props[listType],
-                listType,
+                listType: singularListType,
             },
         });
     }
@@ -66,7 +67,7 @@ class PickClassroomAndStudentScreen extends Component {
                 <TouchableOpacity onPress={() => this.openOptionListScreen('students')}>
                     <View style={styles.pickerContainer}>
                         <Text style={[styles.pickerText, (student ? null : styles.defaultPickerText)]}>
-                            {student ? `${student.firstName} ${student.lastName}` : 'Pick Student...'}
+                            {student ? student.label : 'Pick Student...'}
                         </Text>
                         <Text style={styles.pickerText}>&gt;</Text>
                     </View>

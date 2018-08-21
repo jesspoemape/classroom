@@ -3,7 +3,30 @@ const students = [
         id: 123,
         firstName: 'Jessica',
         lastName: 'Poemape',
-        label: 'Jessica Poemape'
+        label: 'Jessica Poemape',
+        studiedDecks: [
+            {
+                deckId: 333,
+                dateStudied: '2018-08-19T22:24:20.973Z',
+                score: 50,
+                incorrectCards: [3223232, 3223233, 3223234, 3223235, 3223236],
+                correctCards: [3223237, 3223238, 3223239, 3223240, 3223241],
+            },
+            {
+                deckId: 333,
+                dateStudied: '2018-08-20T22:24:20.973Z',
+                score: 70,
+                incorrectCards: [3223232, 3223233, 3223234],
+                correctCards: [3223235, 3223236, 3223237, 3223238, 3223239, 3223240, 3223241],
+            },
+            {
+                deckId: 333,
+                dateStudied: '2018-08-21T22:24:20.973Z',
+                score: 90,
+                incorrectCards: [3223232],
+                correctCards: [3223233, 3223234, 3223235, 3223236, 3223237, 3223238, 3223239, 3223240, 3223241],
+            },
+        ],
     },
     {
         id: 124,

@@ -1,17 +1,31 @@
 import React , { Component } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { View, FlatList, Text, ScrollView } from 'react-native';
 import ListItem from './../components/ListItem';
 
-const OptionListScreen = ({ itemsList, onPickItem, listType }) => {
-    console.log('ITEMS:: ', itemsList);
-    console.log('LIST TYPE:: ', listType);
-    let list = null;;
-    if (itemsList) {
-        list = itemsList.map(item => (
-                <ListItem item={item} onPress={onPickItem} listType={listType} key={item.id} />
-            ));
+const OptionListScreen = ({ onPickItem, listType, students, classrooms, decks }) => {
+    let list = null;
+    let listContent = [];
+    if (students && listType === 'student') {
+        list = students;
+    } else if (decks && listType === 'deck') {
+        list = decks;
+    } else if (classrooms && listType === 'classroom') {
+        list = classrooms;
     }
-    return list;
+
+    if (list) {
+         listContent = list.map(item => (
+                <ListItem item={item} onPress={onPickItem} listType={listType} key={item.id} />
+        ));
+    }
+    return (
+        <ScrollView>{listContent}</ScrollView>
+    ); 
 }
 
-export default OptionListScreen;
+function mapStateToProps({ students, classrooms, decks }) {
+    return { students, classrooms, decks }
+}
+
+export default connect(mapStateToProps, null)(OptionListScreen);
