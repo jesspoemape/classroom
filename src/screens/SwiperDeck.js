@@ -16,7 +16,7 @@ class SwiperDeckScreen extends Component {
         this.renderCard = this.renderCard.bind(this);
         this.swipedLeftHandler = this.swipedLeftHandler.bind(this);
         this.swipedRightHandler = this.swipedRightHandler.bind(this);
-        this.swipedAllHandler = this.swipedAllHandler.bind(this);
+        this.checkForLast = this.checkForLast.bind(this);
     }
 
     renderCard(card) {
@@ -28,37 +28,48 @@ class SwiperDeckScreen extends Component {
     }
 
     swipedRightHandler(cardIndex) {
-        this.setState(prevState => (
-            { 
-                sessionData: {
-                    ...prevState.sessionData,
-                    correctCards: [...prevState.sessionData.correctCards, cardIndex],
-            },
-        }));
+        if (!this.checkForLast(cardIndex)) {
+            const cardId = this.props.cardsList[cardIndex].id;            
+            this.setState(prevState => (
+                { 
+                    sessionData: {
+                        ...prevState.sessionData,
+                        correctCards: [...prevState.sessionData.correctCards, cardId],
+                },
+            }));
+        }
     }
 
     swipedLeftHandler(cardIndex) {
-        this.setState(prevState => (
-            { 
-                sessionData: {
-                    ...prevState.sessionData,
-                    incorrectCards: [...prevState.sessionData.incorrectCards, cardIndex],
-            },
-        }));
+        if (!this.checkForLast(cardIndex)) {
+            const cardId = this.props.cardsList[cardIndex].id;
+            this.setState(prevState => (
+                { 
+                    sessionData: {
+                        ...prevState.sessionData,
+                        incorrectCards: [...prevState.sessionData.incorrectCards, cardId],
+                },
+            }));
+        }
     }
 
-    swipedAllHandler() {
-        console.log('HERE');
-        this.setState({ swipedAll: true });
+    checkForLast(cardIndex) {
+        let isLastCard = false;
+        if (cardIndex + 1 === this.props.cardsList.length) {
+            isLastCard = true;
+            this.setState({ swipedAll: true });
+        }
+        return isLastCard;
     }
 
     render() {
         const { cardsList } = this.props;
         const { swipedAll } = this.state;
+        console.log('SESSION DATA:: ', this.state.sessionData);
         return (
             <View style={styles.container}>
                 <Swiper
-                    cards={cardsList}
+                    cards={swipedAll ? [] : cardsList}
                     renderCard={this.renderCard}
                     onSwipedAll={this.swipedAllHandler}
                     onSwipedRight={this.swipedRightHandler}
@@ -68,6 +79,11 @@ class SwiperDeckScreen extends Component {
                     stackSize= {3}
                     verticalSwipe={false}
                 />
+                {swipedAll && (
+                    <View style={styles.allDoneContainer}>
+                        <Text style={styles.allDoneText}>All Done!</Text>
+                    </View>)
+                }
             </View>    
         );
     }
@@ -92,7 +108,15 @@ const styles = StyleSheet.create({
       textAlign: "center",
       fontSize: 50,
       backgroundColor: "transparent"
-    }
+    },
+    allDoneText: {
+        fontSize: 50,
+    },
+    allDoneContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
   });
 
 export default SwiperDeckScreen;
