@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button, Alert } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
+import AllDone from './../components/AllDone';
 
 class SwiperDeckScreen extends Component {
     constructor(props) {
@@ -11,12 +12,15 @@ class SwiperDeckScreen extends Component {
                 correctCards: [],
             },
             swipedAll: false,
+            restartSession: null,
         };
 
         this.renderCard = this.renderCard.bind(this);
         this.swipedLeftHandler = this.swipedLeftHandler.bind(this);
         this.swipedRightHandler = this.swipedRightHandler.bind(this);
         this.checkForLast = this.checkForLast.bind(this);
+        this.handleHomeNavigation = this.handleHomeNavigation.bind(this);
+        this.restartStudySession = this.restartStudySession.bind(this);
     }
 
     renderCard(card) {
@@ -62,10 +66,34 @@ class SwiperDeckScreen extends Component {
         return isLastCard;
     }
 
+    handleHomeNavigation() {
+        this.props.navigator.resetTo({
+            screen: 'classroom.StartScreen'
+        });
+    }
+
+    restartStudySession() {
+        Alert.alert(
+            'Restart Study Session?',
+            'Your previous session data will not be saved. Do you wish to continue?',
+            [
+                {
+                    text: 'Restart session',
+                    onPress: () => this.setState({ restartSession: 0, swipedAll: false, sessionData: { incorrectCards: [], correctCards: [] } }),
+                    style: 'default',
+                },
+                {
+                    text: 'Cancel',
+                    onPress: () => {},
+                    style: 'cancel',
+                },
+            ]
+        );
+    }
+
     render() {
         const { cardsList } = this.props;
-        const { swipedAll } = this.state;
-        console.log('SESSION DATA:: ', this.state.sessionData);
+        const { swipedAll, restartSession } = this.state;
         return (
             <View style={styles.container}>
                 <Swiper
@@ -78,12 +106,9 @@ class SwiperDeckScreen extends Component {
                     backgroundColor={'#4FD0E9'}
                     stackSize= {3}
                     verticalSwipe={false}
+                    jumpToCardIndex={restartSession}
                 />
-                {swipedAll && (
-                    <View style={styles.allDoneContainer}>
-                        <Text style={styles.allDoneText}>All Done!</Text>
-                    </View>)
-                }
+                {swipedAll && <AllDone restartSession={this.restartStudySession} handleHomeNavigation={this.handleHomeNavigation} />}
             </View>    
         );
     }
@@ -108,14 +133,6 @@ const styles = StyleSheet.create({
       textAlign: "center",
       fontSize: 50,
       backgroundColor: "transparent"
-    },
-    allDoneText: {
-        fontSize: 50,
-    },
-    allDoneContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
   });
 
