@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import StartScreen from './src/screens/Start';
 import PickClassroomAndStudentScreen from './src/screens/PickClassroomAndStudent';
 import OptionListScreen from './src/screens/OptionList';
+import SwiperDeckScreen from './src/screens/SwiperDeck';
 import store from './store';
 
 // Register Screens
@@ -21,6 +22,10 @@ Navigation.registerComponent(
   () => OptionListScreen,
   store,
   Provider
+);
+Navigation.registerComponent(
+  'classroom.SwiperDeckScreen',
+  () => SwiperDeckScreen,
 );
 
 //  Start App
