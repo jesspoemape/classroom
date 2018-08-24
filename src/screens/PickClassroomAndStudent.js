@@ -22,7 +22,7 @@ class PickClassroomAndStudentScreen extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchClassrooms();
+        this.props.fetchClassroomsList();
     }
 
     updatePicker(value, picker) {
@@ -47,9 +47,9 @@ class PickClassroomAndStudentScreen extends Component {
         const { classroom, random } = this.state;
         const singularListType = listType.slice(0, listType.length -1)
         if (singularListType === 'student') {
-            this.props.fetchStudents(classroom.id);
+            this.props.fetchStudentsList(classroom.id);
         } else if (singularListType === 'deck') {
-            this.props.fetchDecks(classroom.id);
+            this.props.fetchDecksList(classroom.id);
         }
         this.props.navigator.push({
             screen: 'classroom.OptionListScreen',
@@ -90,7 +90,7 @@ class PickClassroomAndStudentScreen extends Component {
         const { classroom, student, deck, random } = this.state;
         return (
             <View style={styles.mainContainer}>
-                <TouchableOpacity onPress={() => this.openOptionListScreen('classrooms')}>
+                <TouchableOpacity onPress={() => this.openOptionListScreen('classroomsList')}>
                     <View style={styles.pickerContainer}>
                         <Text style={[styles.pickerText, (classroom ? null : styles.defaultPickerText)]}>
                             {classroom ? classroom.label : 'Pick Classroom...'}
@@ -98,7 +98,7 @@ class PickClassroomAndStudentScreen extends Component {
                         <Text style={styles.pickerText}>&gt;</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.openOptionListScreen('students')} disabled={!classroom}>
+                <TouchableOpacity onPress={() => this.openOptionListScreen('studentsList')} disabled={!classroom}>
                     <View style={styles.pickerContainer}>
                         <Text style={[styles.pickerText, (student ? null : styles.defaultPickerText)]}>
                             {student ? student.label : 'Pick Student...'}
@@ -106,7 +106,7 @@ class PickClassroomAndStudentScreen extends Component {
                         <Text style={styles.pickerText}>&gt;</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.openOptionListScreen('decks')} disabled={!classroom && !student}>
+                <TouchableOpacity onPress={() => this.openOptionListScreen('decksList')} disabled={!classroom && !student}>
                     <View style={styles.pickerContainer}>
                         <Text style={[styles.pickerText, (deck ? null : styles.defaultPickerText)]}>
                             {deck ? deck.label : 'Pick Deck...'}
@@ -160,8 +160,8 @@ const styles = StyleSheet.create({
     },
 });
 
-function mapStateToProps({ classrooms, students, decks }) {
-    return { classrooms, students, decks };
+function mapStateToProps({ classroomsList, studentsList, decksList }) {
+    return { classroomsList, studentsList, decksList };
 }
 
 export default connect(mapStateToProps, actions)(PickClassroomAndStudentScreen);

@@ -6,12 +6,12 @@ import ListItem from './../components/ListItem';
 const OptionListScreen = ({ onPickItem, listType, students, classrooms, decks }) => {
     let list = null;
     let listContent = [];
-    if (students && listType === 'student') {
-        list = students;
-    } else if (decks && listType === 'deck') {
-        list = decks;
-    } else if (classrooms && listType === 'classroom') {
-        list = classrooms;
+    if (studentsList && listType === 'studentsList') {
+        list = studentsList;
+    } else if (decksList && listType === 'decksList') {
+        list = decksList;
+    } else if (classroomsList && listType === 'classroomsList') {
+        list = classroomsList;
     }
 
     if (list) {
@@ -24,8 +24,8 @@ const OptionListScreen = ({ onPickItem, listType, students, classrooms, decks })
     ); 
 }
 
-function mapStateToProps({ students, classrooms, decks }) {
-    return { students, classrooms, decks }
+function mapStateToProps({ studentsList, classroomsList, decksList }) {
+    return { studentsList, classroomsList, decksList }
 }
 
 export default connect(mapStateToProps, null)(OptionListScreen);

@@ -10,12 +10,17 @@ class AdminLandingScreen extends Component {
     }
 
     handleNavigation(screen, addType) {
-        this.props.navigator.push({
-            screen, 
-            passProps: {
-                typeName: addType,
-            }
-        });
+        let pushObj = { screen, passProps: {} };
+        if (addType) {
+            pushObj = { 
+                ...pushObj,
+                passProps: {
+                    ...pushObj.passProps,
+                    typeName: addType
+                }
+            };
+        }
+        this.props.navigator.push(pushObj);
     }
 
     render() {
@@ -30,7 +35,7 @@ class AdminLandingScreen extends Component {
                 <View style={styles.statsContainer}>
                     <Text>Stats</Text>
                     <AdminButton title="View Classroom Stats" onPress={() => this.handleNavigation('')} />
-                    <AdminButton title="View Student Stats" onPress={() => this.handleNavigation('')} />
+                    <AdminButton title="View Student Stats" onPress={() => this.handleNavigation('classroom.StudentStatsScreen', null)} />
                 </View>
             </View>
         );

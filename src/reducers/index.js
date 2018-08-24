@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
+import studentsListReducer from './studentsListReducer';
+import classroomsListReducer from './classroomsListReducer';
+import decksListReducer from './decksListReducer';
 import studentReducer from './studentReducer';
-import classroomReducer from './classroomReducer';
-import deckReducer from './deckReducer';
 
 export default combineReducers({
-    classrooms: classroomReducer,
-    students: studentReducer,
-    decks: deckReducer,
+    classroomsList: classroomsListReducer,
+    studentsList: studentsListReducer,
+    decksList: decksListReducer,
+    student: studentReducer,
 });

@@ -6,6 +6,7 @@ import OptionListScreen from './src/screens/OptionList';
 import SwiperDeckScreen from './src/screens/SwiperDeck';
 import AdminLandingScreen from './src/screens/AdminLanding';
 import AddManagerScreen from './src/screens/AddManager';
+import StudentStatsScreen from './src/screens/StudentStats';
 import store from './store';
 
 // Register Screens
@@ -37,7 +38,12 @@ Navigation.registerComponent(
   'classroom.AddManagerScreen',
   () => AddManagerScreen,
 );
-
+Navigation.registerComponent(
+  'classroom.StudentStatsScreen',
+  () => StudentStatsScreen,
+  store,
+  Provider
+);
 //  Start App
 Navigation.startSingleScreenApp({
   screen: {
