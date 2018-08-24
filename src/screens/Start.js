@@ -16,7 +16,9 @@ class StartScreen extends Component {
     }
 
     adminHandler() {
-        alert('You are an Admin');
+        this.props.navigator.push({
+            screen: 'classroom.AdminLandingScreen',
+        });
     }
 
     render () {
