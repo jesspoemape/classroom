@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 import { View, FlatList, Text, ScrollView } from 'react-native';
 import ListItem from './../components/ListItem';
 
-const OptionListScreen = ({ onPickItem, listType, students, classrooms, decks }) => {
+const OptionListScreen = (props) => {
+    console.log('PROPS:: ', props);
+    const {onPickItem, listType, students, classrooms, decks} = props;
     let list = null;
     let listContent = [];
-    if (studentsList && listType === 'studentsList') {
-        list = studentsList;
-    } else if (decksList && listType === 'decksList') {
-        list = decksList;
-    } else if (classroomsList && listType === 'classroomsList') {
-        list = classroomsList;
+    if (props.studentsList && listType === 'student') {
+        list = props.studentsList;
+    } else if (props.decksList && listType === 'deck') {
+        list = props.decksList;
+    } else if (props.classroomsList && listType === 'classroom') {
+        list = props.classroomsList;
     }
 
     if (list) {

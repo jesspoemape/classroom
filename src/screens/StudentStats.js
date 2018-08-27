@@ -16,12 +16,25 @@ class StudentStatsScreen extends Component {
     }
 
     renderDataSection() {
-        return this.props.student.studiedDecks.map(deck => {
+        const { studiedDecks } = this.props.student;
+        return studiedDecks.map(deck => {
             const deckScores =  deck.studyData.map(studySession => studySession.score);
             return (
-                <View key={deck.deckId}>
+                <View key={deck.deckId} style={styles.statsContainer}>
                     <Text style={styles.chartHeader}>{deck.deckId}</Text>
                     <ProgressChart data={deckScores} />
+                    <View style={styles.secondaryStatsContainer}>
+                        <View style={styles.timesStudiedContainer}>
+                            <Text>Studied</Text>
+                            <Text style={styles.largeNumber}>{deckScores.length}</Text>
+                            <Text>times</Text>
+                        </View>
+                        <View style={styles.timesStudiedContainer}>
+                            <Text>Studied</Text>
+                            <Text>{deckScores.length}</Text>
+                            <Text>Times</Text>
+                        </View>
+                    </View>
                 </View>
             );
         });
@@ -53,7 +66,25 @@ const styles = StyleSheet.create({
     chartHeader: {
         textAlign: 'center',
         marginBottom: -30,
-    }
+    },
+    timesStudiedContainer: {
+        alignItems: 'center',
+    },
+    statsContainer: {
+        marginBottom: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#eee',
+    },
+    secondaryStatsContainer: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        marginTop: -20,
+        paddingTop: 10,
+        paddingBottom: 10,
+    },
+    largeNumber: {
+        fontSize: 30,
+    },
 });
 
 function mapStateToProps({ student }) {

@@ -33,7 +33,7 @@ class PickClassroomAndStudentScreen extends Component {
     }
 
     startSession() {
-        const selectedDeck = this.props.decks.find(deck => deck.id === this.state.deck.id);
+        const selectedDeck = this.props.decksList.find(deck => deck.id === this.state.deck.id);
         const cardsList = this.state.random ? this.shuffleArray(selectedDeck.cards) : selectedDeck.cards;
         this.props.navigator.push({
             screen: 'classroom.SwiperDeckScreen',
@@ -45,7 +45,7 @@ class PickClassroomAndStudentScreen extends Component {
 
     openOptionListScreen(listType) {
         const { classroom, random } = this.state;
-        const singularListType = listType.slice(0, listType.length -1)
+        const singularListType = listType.slice(0, listType.length - 5)
         if (singularListType === 'student') {
             this.props.fetchStudentsList(classroom.id);
         } else if (singularListType === 'deck') {
